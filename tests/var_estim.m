@@ -22,6 +22,7 @@ refline_color = 'black';
 refline_width = 1;
 refline_style = ':';
 
+
 %% Generating (not so much) random data
 N = 2;
 
@@ -46,6 +47,7 @@ G = [ 0.3,  0.0 ; ...
 for t = 2 : T
     y(t, :) = C' + y(t-1, :) * B + e(t, :) * G;
 end
+
 
 %% Cleaning up the mess
 
@@ -73,6 +75,7 @@ figure
 plot(y, 'LineWidth', 1)
 legend({'$y_1$', '$y_2$'}, 'interpreter', 'latex')
 grid on; box on;
+print(gcf, 'samples.png', '-dpng')
 
 figure
 subplot(2, 2, 1)
@@ -150,3 +153,5 @@ subplot(2, 2, 4)
     legend({'Estimated', 'Theoretical'})
     title('IRF of y_2 to e_2')
     grid on; box on;
+
+print(gcf, 'irfs.png', '-dpng')
