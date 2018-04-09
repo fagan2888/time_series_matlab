@@ -8,7 +8,7 @@ clc
 %% Setting up the environment (ensuring replicability)
 rng(3006510)
 T = 350;
-irf_horizon = 250;
+irf_horizon = 100;
 irf_identif = 'short-run';
 
 % Graphics settings
