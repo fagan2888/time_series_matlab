@@ -14,7 +14,7 @@ Download the `var_lib` folder and let Matlab see it.
   Given estimated `B` and `S` and an orthogonalization scheme (`short-run` or `long-run`), computes the Impulse-Response Functions (IRFs) for `h` periods ahead.
 
 The other functions in the folder are not supposed to be used directly by the end user.
-That is, they are auxiliary functions that do the "behind-the-scenes" heavy lifting.
+That is, they are auxiliary functions that do the behind-the-scenes heavy lifting.
 In short, they do the necessary matrix manipulation to prepare the dataset for VAR estimation, leveraging the companion form representation.
 The only general purpose function is `ols.m`, which is pretty much self-explanatory.
 
