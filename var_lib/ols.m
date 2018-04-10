@@ -1,4 +1,4 @@
-function [b, s2] = ols(y, x)
+function [b, s2] = ols(y, x, dof)
 
 % Assuming first dimension (rows) run along time indices.
 % Assuming second dimension (columns) run along variable indices.
@@ -7,6 +7,10 @@ function [b, s2] = ols(y, x)
 
 T = size(x, 1);
 N = size(x, 2);
+
+if nargin < 3
+    dof = T - N;
+end
 
 if size(y, 1) ~= T
     error('LHS does not have equal amount of obs. as RHS.')
@@ -18,7 +22,7 @@ b = ixx * (x' * y);
 
 if nargout > 1
     resid = y - x * b;
-    s2 = (resid' * resid) ./ (T-N);
+    s2 = (resid' * resid) ./ dof;
 end
 
 end

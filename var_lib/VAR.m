@@ -17,10 +17,15 @@ tmp = lead(lagcat(X, p), p);
 x1 = tmp(:, 1:end-N);
 x0 = tmp(:, N+1:end);
 
+T = size(x1, 1);
+N = size(x1, 2);
+
+dof = T - N*p;
+
 
 %% Step 2: running OLS
 
-[B, S] = ols(x1, x0);
+[B, S] = ols(x1, x0, dof);
 
 
 end

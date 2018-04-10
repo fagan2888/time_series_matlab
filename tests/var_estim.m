@@ -60,6 +60,7 @@ clearvars e1 e2 y1 y2 t
 %% The real thing
 
 [Bhat, Shat] = VAR(y, 1);
+Ghat = chol(Shat, 'lower');
 ir = IRF(irf_horizon, Bhat, Shat, irf_identif);
 
 ir_theory = zeros(N, N, irf_horizon);

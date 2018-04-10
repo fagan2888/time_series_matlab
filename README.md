@@ -28,7 +28,6 @@ The only general purpose function is `ols.m`, which is pretty much self-explanat
 
 ### To Do's
 
-* The `ols.m` function has a mistake in correcting the variance-covariance matrix for the degrees of freedom.
 * Implement bootstrapping for IRF confidence intervals.
 * Generalize and prettify `IRF.m` for lag order _p > 1_.
 * Implement the long-run identification scheme in `IRF.m`.
