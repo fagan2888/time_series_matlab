@@ -37,10 +37,10 @@ e = [e1, e2];
 
 C = [ 0 ; ...
       0 ];
- 
+
 B = [ 0.7, -0.1 ; ...
      -0.2,  0.9 ];
- 
+
 G = [ 0.3,  0.0 ; ...
       0.5,  0.8 ];
 
@@ -57,7 +57,7 @@ T = size(y, 1);
 clearvars e1 e2 y1 y2 t
 
 
-%% Starting testing
+%% The real thing
 
 [Bhat, Shat] = VAR(y, 1);
 ir = IRF(irf_horizon, Bhat, Shat, irf_identif);
